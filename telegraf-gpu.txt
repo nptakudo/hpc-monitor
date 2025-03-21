@@ -1,0 +1,17 @@
+[agent]
+  interval = "5s"
+  flush_interval = "5s"
+  hostname = "VM-GPU"
+
+# Output Plugin for InfluxDB
+[[outputs.influxdb_v2]]
+  urls = ["http://146.190.97.107:8086"]
+  token = "DGu91WQV1h2yOYVyJliVfjMYKYldB5qEvyI3-BdfAxJGysdn3avI9sIFXEjHCZ1FcKIPYB0HetVsJQ3H5GmWjg=="
+  organization = "grafana"
+  bucket = "VM-GPU"
+
+[[inputs.nvidia_smi]]
+
+[[processors.converter]]
+  [processors.converter.fields]
+    tag = ["pid"]
